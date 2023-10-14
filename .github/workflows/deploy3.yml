@@ -65,12 +65,13 @@ jobs:
           fetch-depth: 2
 
       # Log into ghcr (so we can push images)
-      - name: Login to ghcr.io
+          
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}                  
 
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
@@ -115,13 +116,13 @@ jobs:
         with:
           fetch-depth: 2
 
-      # Log into ghcr (so we can push images)
-      - name: Login to ghcr.io
+      # Log into ghcr (so we can push images)         
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}           
 
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
@@ -166,12 +167,12 @@ jobs:
           fetch-depth: 2
 
       # Log into ghcr (so we can push images)
-      - name: Login to ghcr.io
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}   
 
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
