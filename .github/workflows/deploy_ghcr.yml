@@ -561,336 +561,336 @@ jobs:
           tags: ghcr.io/ngtrthanh/docker-baseimage:qemu
           labels: ${{ steps.meta.outputs.labels }}
 
-  trigger_build_sdr-enthusiasts_docker-readsb-protobuf:
-    name: Trigger deploy of sdr-enthusiasts/docker-readsb-protobuf
+  trigger_build_ngtrthanh_docker-readsb-protobuf:
+    name: Trigger deploy of ngtrthanh/docker-readsb-protobuf
     needs: [deploy_ghcr_readsb-full]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-readsb-protobuf
+      WORKFLOW_REPO: ngtrthanh/docker-readsb-protobuf
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-acarsdec:
-    name: Trigger deploy of sdr-enthusiasts/docker-acarsdec
+  trigger_build_ngtrthanh_docker-acarsdec:
+    name: Trigger deploy of ngtrthanh/docker-acarsdec
     needs: [deploy_ghcr_acars-decoder]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-acarsdec
+      WORKFLOW_REPO: ngtrthanh/docker-acarsdec
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-dumpvdl2:
-    name: Trigger deploy of sdr-enthusiasts/docker-dumpvdl2
+  trigger_build_ngtrthanh_docker-dumpvdl2:
+    name: Trigger deploy of ngtrthanh/docker-dumpvdl2
     needs: [deploy_ghcr_acars-decoder]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-dumpvdl2
+      WORKFLOW_REPO: ngtrthanh/docker-dumpvdl2
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-vdlm2dec:
-    name: Trigger deploy of sdr-enthusiasts/docker-vdlm2dec
+  trigger_build_ngtrthanh_docker-vdlm2dec:
+    name: Trigger deploy of ngtrthanh/docker-vdlm2dec
     needs: [deploy_ghcr_acars-decoder]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-vdlm2dec
+      WORKFLOW_REPO: ngtrthanh/docker-vdlm2dec
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-acarshub-baseimage:
-    name: Trigger deploy of sdr-enthusiasts/docker-acarshub
+  trigger_build_ngtrthanh_docker-acarshub-baseimage:
+    name: Trigger deploy of ngtrthanh/docker-acarshub
     needs: [deploy_ghcr_python]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-acarshub
+      WORKFLOW_REPO: ngtrthanh/docker-acarshub
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-radarbox:
-    name: Trigger deploy of sdr-enthusiasts/docker-radarbox
+  trigger_build_ngtrthanh_docker-radarbox:
+    name: Trigger deploy of ngtrthanh/docker-radarbox
     needs: [deploy_qemu]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-radarbox
+      WORKFLOW_REPO: ngtrthanh/docker-radarbox
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_beast-splitter:
-    name: Trigger deploy of sdr-enthusiasts/docker-beast-splitter
+  trigger_build_ngtrthanh_beast-splitter:
+    name: Trigger deploy of ngtrthanh/docker-beast-splitter
     needs: [deploy_ghcr_base]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-beast-splitter
+      WORKFLOW_REPO: ngtrthanh/docker-beast-splitter
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-flightradar24:
-    name: Trigger deploy of sdr-enthusiasts/docker-flightradar24
+  trigger_build_ngtrthanh_docker-flightradar24:
+    name: Trigger deploy of ngtrthanh/docker-flightradar24
     needs: [deploy_qemu]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-flightradar24
+      WORKFLOW_REPO: ngtrthanh/docker-flightradar24
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-radarvirtuel:
-    name: Trigger deploy of sdr-enthusiasts/docker-radarvirtuel
+  trigger_build_ngtrthanh_docker-radarvirtuel:
+    name: Trigger deploy of ngtrthanh/docker-radarvirtuel
     needs: [deploy_ghcr_python]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-radarvirtuel
+      WORKFLOW_REPO: ngtrthanh/docker-radarvirtuel
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-tar1090:
-    name: Trigger deploy of sdr-enthusiasts/docker-tar1090
+  trigger_build_ngtrthanh_docker-tar1090:
+    name: Trigger deploy of ngtrthanh/docker-tar1090
     needs: [deploy_wreadsb]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-tar1090
+      WORKFLOW_REPO: ngtrthanh/docker-tar1090
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-dump978:
-    name: Trigger deploy of sdr-enthusiasts/docker-dump978
+  trigger_build_ngtrthanh_docker-dump978:
+    name: Trigger deploy of ngtrthanh/docker-dump978
     needs: [deploy_dump978-full]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-dump978
+      WORKFLOW_REPO: ngtrthanh/docker-dump978
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_docker-piaware:
-    name: Trigger deploy of sdr-enthusiasts/docker-piaware
+  trigger_build_ngtrthanh_docker-piaware:
+    name: Trigger deploy of ngtrthanh/docker-piaware
     needs: [deploy_dump978-full]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-piaware
+      WORKFLOW_REPO: ngtrthanh/docker-piaware
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_adsbexchange:
-    name: Trigger deploy of sdr-enthusiasts/docker-adsbexchange
+  trigger_build_ngtrthanh_adsbexchange:
+    name: Trigger deploy of ngtrthanh/docker-adsbexchange
     needs: [deploy_ghcr_python]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-adsbexchange
+      WORKFLOW_REPO: ngtrthanh/docker-adsbexchange
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-adsbexchange"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-adsbexchange"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_adsbhub:
-    name: Trigger deploy of sdr-enthusiasts/docker-adsbhub
+  trigger_build_ngtrthanh_adsbhub:
+    name: Trigger deploy of ngtrthanh/docker-adsbhub
     needs: [deploy_ghcr_base]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-adsbhub
+      WORKFLOW_REPO: ngtrthanh/docker-adsbhub
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-adsbhub"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-adsbhub"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_opensky_network:
-    name: Trigger deploy of sdr-enthusiasts/docker-opensky-network
+  trigger_build_ngtrthanh_opensky_network:
+    name: Trigger deploy of ngtrthanh/docker-opensky-network
     needs: [deploy_ghcr_base]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-opensky-network
+      WORKFLOW_REPO: ngtrthanh/docker-opensky-network
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-opensky-network"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-opensky-network"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_planefinder:
-    name: Trigger deploy of sdr-enthusiasts/docker-planefinder
+  trigger_build_ngtrthanh_planefinder:
+    name: Trigger deploy of ngtrthanh/docker-planefinder
     needs: [deploy_qemu]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-planefinder
+      WORKFLOW_REPO: ngtrthanh/docker-planefinder
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-planefinder"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-planefinder"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_acars_router:
-    name: Trigger deploy of sdr-enthusiasts/acars_router
+  trigger_build_ngtrthanh_acars_router:
+    name: Trigger deploy of ngtrthanh/acars_router
     needs: [deploy_ghcr_base]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/acars_router
+      WORKFLOW_REPO: ngtrthanh/acars_router
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-baseimage"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_rtlsdrairband:
-    name: Trigger deploy of sdr-enthusiasts/docker-rtlsdrairband
+  trigger_build_ngtrthanh_rtlsdrairband:
+    name: Trigger deploy of ngtrthanh/docker-rtlsdrairband
     needs: [deploy_ghcr_base]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-rtlsdrairband
+      WORKFLOW_REPO: ngtrthanh/docker-rtlsdrairband
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-rtlsdrairband"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-rtlsdrairband"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_airspy_adsb:
-    name: Trigger deploy of sdr-enthusiasts/airspy_adsb
+  trigger_build_ngtrthanh_airspy_adsb:
+    name: Trigger deploy of ngtrthanh/airspy_adsb
     needs: [deploy_ghcr_base]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/adsb_airspy
+      WORKFLOW_REPO: ngtrthanh/adsb_airspy
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/adsb_airspy"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/adsb_airspy"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_acars-oxide:
-    name: Trigger deploy of sdr-enthusiasts/acars-oxide
+  trigger_build_ngtrthanh_acars-oxide:
+    name: Trigger deploy of ngtrthanh/acars-oxide
     needs: [deploy_ghcr_rtlsdr]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/acars-oxide
+      WORKFLOW_REPO: ngtrthanh/acars-oxide
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/acars-oxide"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/acars-oxide"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
           echo "$WORKFLOW_AUTH_TOKEN" | gh auth login --with-token
           gh workflow run --ref main --repo "$WORKFLOW_REPO" "$WORKFLOW_FILE" -f reason="$WORKFLOW_REASON"
 
-  trigger_build_sdr-enthusiasts_reverse_web_proxy:
-    name: Trigger deploy of sdr-enthusiasts/docker-reversewebproxy
+  trigger_build_ngtrthanh_reverse_web_proxy:
+    name: Trigger deploy of ngtrthanh/docker-reversewebproxy
     needs: [deploy_ghcr_python]
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
       WORKFLOW_AUTH_TOKEN: ${{ secrets.GH_PAT_NTT }}
-      WORKFLOW_REPO: sdr-enthusiasts/docker-reversewebproxy
+      WORKFLOW_REPO: ngtrthanh/docker-reversewebproxy
       WORKFLOW_FILE: deploy.yml
-      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in sdr-enthusiasts/docker-reversewebproxy"
+      WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-reversewebproxy"
     steps:
       - name: Trigger ${{ env.WORKFLOW_FILE }} in ${{ env.WORKFLOW_REPO }}
         run: |
