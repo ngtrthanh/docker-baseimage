@@ -89,7 +89,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # Build & Push Dockerfile (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:base
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:base
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -97,7 +97,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:base
+          tags: ghcr.io/ngtrthanh/docker-baseimage:base
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_ghcr_python:
@@ -144,7 +144,7 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v3
       # Build & Push Dockerfile.python (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:python
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:python
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -152,7 +152,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:python
+          tags: ghcr.io/ngtrthanh/docker-baseimage:python
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_ghcr_rtlsdr:
@@ -194,7 +194,7 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v3
       # Build & Push Dockerfile.rtlsdr (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:rtlsdr
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:rtlsdr
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -202,7 +202,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:rtlsdr
+          tags: ghcr.io/ngtrthanh/docker-baseimage:rtlsdr
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_ghcr_readsb-netonly:
@@ -244,7 +244,7 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v3
       # Build & Push Dockerfile.readsb-netonly (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:readsb-netonly
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:readsb-netonly
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -252,7 +252,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:readsb-netonly
+          tags: ghcr.io/ngtrthanh/docker-baseimage:readsb-netonly
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_ghcr_readsb-full:
@@ -295,7 +295,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # Build & Push Dockerfile.readsb-full (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:readsb-full
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:readsb-full
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -303,7 +303,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:readsb-full
+          tags: ghcr.io/ngtrthanh/docker-baseimage:readsb-full
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_ghcr_acars-decoder:
@@ -346,7 +346,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # Build & Push Dockerfile.acars (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:acars-decoder
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:acars-decoder
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -354,7 +354,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:acars-decoder
+          tags: ghcr.io/ngtrthanh/docker-baseimage:acars-decoder
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_soapyrtlsdr:
@@ -397,7 +397,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # Build & Push Dockerfile (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:soapyrtlsdr
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:soapyrtlsdr
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -405,7 +405,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:soapyrtlsdr
+          tags: ghcr.io/ngtrthanh/docker-baseimage:soapyrtlsdr
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_dump978-full:
@@ -448,7 +448,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # Build & Push Dockerfile (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:dump978-full
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:dump978-full
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -456,7 +456,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:dump978-full
+          tags: ghcr.io/ngtrthanh/docker-baseimage:dump978-full
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_wreadsb:
@@ -499,7 +499,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # Build & Push Dockerfile (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:wreadsb
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:wreadsb
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -507,7 +507,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:wreadsb
+          tags: ghcr.io/ngtrthanh/docker-baseimage:wreadsb
           labels: ${{ steps.meta.outputs.labels }}
 
   deploy_qemu:
@@ -550,7 +550,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       # Build & Push Dockerfile (only push if this action was NOT triggered by a PR)
-      - name: Build & Push ghcr.io/sdr-enthusiasts/docker-baseimage:qemu
+      - name: Build & Push ghcr.io/ngtrthanh/docker-baseimage:qemu
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -558,7 +558,7 @@ jobs:
           no-cache: true
           platforms: linux/amd64,linux/arm/v7,linux/arm/v6,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ghcr.io/sdr-enthusiasts/docker-baseimage:qemu
+          tags: ghcr.io/ngtrthanh/docker-baseimage:qemu
           labels: ${{ steps.meta.outputs.labels }}
 
   trigger_build_sdr-enthusiasts_docker-readsb-protobuf:
