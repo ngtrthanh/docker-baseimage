@@ -76,7 +76,7 @@ jobs:
       - name: Debug Info
         run: |
           echo "GitHub Actor: ${{ github.actor }}"
-          echo "GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
+          echo "GitHub Token: ${{ secrets.GH_PAT_A }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT_A }}
 
