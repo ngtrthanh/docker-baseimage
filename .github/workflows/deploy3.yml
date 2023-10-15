@@ -71,14 +71,14 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.PAT_NTT }}
+          password: ${{ secrets.PAT_THANH }}
           
       - name: Debug Info
         run: |
           echo "GitHub Actor: ${{ github.actor }}"
           echo "GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_NTT }}
+          GITHUB_TOKEN: ${{ secrets.PAT_THANH }}
 
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
@@ -129,7 +129,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.PAT_NTT }}           
+          password: ${{ secrets.PAT_THANH }}           
 
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
@@ -179,7 +179,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.PAT_NTT }}   
+          password: ${{ secrets.PAT_THANH }}   
 
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
@@ -215,7 +215,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.disable_upstream_triggers != 'true' }}
     env:
-      WORKFLOW_AUTH_TOKEN: ${{ secrets.PAT_NTT }}
+      WORKFLOW_AUTH_TOKEN: ${{ secrets.PAT_THANH }}
       WORKFLOW_REPO: ngtrthanh/docker-readsb-protobuf
       WORKFLOW_FILE: deploy.yml
       WORKFLOW_REASON: "triggered via deploy_ghcr.yml in ngtrthanh/docker-baseimage"
