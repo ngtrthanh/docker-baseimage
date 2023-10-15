@@ -64,7 +64,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -144,7 +144,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -233,7 +233,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -324,7 +324,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -417,7 +417,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -510,7 +510,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -603,7 +603,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -697,7 +697,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -787,7 +787,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
@@ -878,7 +878,7 @@ jobs:
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_PAT_A }}
       # Get metadata from repo
       - name: Extract metadata (tags, labels) for Docker
         if: steps.changed-files-specific.outputs.any_changed == 'true'
